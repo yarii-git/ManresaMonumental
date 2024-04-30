@@ -1,16 +1,22 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { View, StyleSheet, Dimensions, FlatList, Image, Text, TouchableOpacity } from 'react-native';
-import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import { mapStyle } from './mapStyle';
 import { MARKERS_DATA } from '../../data/MARKERS_DATA';
 import HeaderComponent from '../HeaderComponent';
 
+// Component that displays a map with markers and a slider to select markers
 const MapScreen = () => {
+  // Reference to the map component
   const mapRef = useRef(null);
+
+  // State to store the currently selected marker
   const [selectedMarker, setSelectedMarker] = React.useState(null);
 
+  // Function to handle marker press events
   const handleMarkerPress = (marker, index) => {
-    
+
+    // Set the selected marker and move the map to its location
     setSelectedMarker(MARKERS_DATA[index]);
 
     if (mapRef.current) {
@@ -46,6 +52,7 @@ const MapScreen = () => {
             coordinate={{latitude: marker.latitude,longitude: marker.longitude}}
             onPress={() => handleMarkerPress(marker, index)}
           >
+            {/* Display the name of the selected marker */}
             {selectedMarker && selectedMarker.id === marker.id && <Text>{selectedMarker.name}</Text>}
           </Marker>
         ))}

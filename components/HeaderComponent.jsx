@@ -12,27 +12,26 @@ const HeaderComponent = () => {
     );
 }
 
-//create our styling code:
 const styles = StyleSheet.create({
     header: {
-      flexDirection: 'row', // Alinear elementos horizontalmente
+      flexDirection: 'row',
       marginTop:20,
-      alignItems: 'center', // Centrar verticalmente los elementos
-      justifyContent: 'space-around', // Centrar horizontalmente los elementos
+      alignItems: 'center',
+      justifyContent: 'space-around',
       height: 100,
-      width: '100%', // Ancho del 100% del contenedor
+      width: '100%',
       
-      borderBottomWidth: 1, // Añade una línea inferior al encabezado
-      borderBottomColor: '#CCCCCC', // Color de la línea inferior
+      borderBottomWidth: 1,
+      borderBottomColor: '#CCCCCC',
     },
     image: {
-      width: 30, // Tamaño de la imagen
-      height: 40, // Tamaño de la imagen
+      width: 30,
+      height: 40,
     },
     text: {
-      fontSize: 20, // Tamaño del texto
-      fontWeight: 'bold', // Peso del texto
-      color: '#333333', // Color del texto
+      fontSize: 20,
+      fontWeight: 'bold',
+      color: '#333333',
     },
   });
 
